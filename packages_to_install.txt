@@ -1,0 +1,2 @@
+conda install -c conda-forge pandas matplotlib geopandas contextily pyyaml openpyxl xyzservices
+# pip install pandas matplotlib geopandas contextily PyYAML openpyxl xyzservices

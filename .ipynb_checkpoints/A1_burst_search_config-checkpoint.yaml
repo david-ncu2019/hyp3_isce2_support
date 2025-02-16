@@ -1,0 +1,23 @@
+# config.yaml
+relative_orbit: 69           # required (will be zero-padded to "069")
+start_date: "2025-01-01"      # required; ISO formatted date string
+end_date: "2025-01-31"        # required; ISO formatted date string
+beam_mode: "IW"              # required
+flight_direction: "ASCENDING" # required
+polarization: "VV"           # required
+burst_id_groups:
+  - iw: 1                    # required; numeric
+    prefix: 146              # required; numeric
+    range:
+      start: 196           # required; numeric
+      end: 200             # required; numeric (end is exclusive)
+  # - iw: 2
+  #   prefix: 146
+  #   range:
+  #     start: 190
+  #     end: 203
+  # - iw: 3
+  #   prefix: 146
+  #   range:
+  #     start: 198
+  #     end: 204
