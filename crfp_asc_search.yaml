@@ -8,25 +8,25 @@ SEARCH:
   start_date: "2017-01-01"      # required; "YYYY-MM-DD"
   end_date: "2019-12-31"        # required; "YYYY-MM-DD"
   beam_mode: "IW"              # required
-  flight_direction: "DESCENDING" # required, ASCENDING or DESCENDING
+  flight_direction: "ASCENDING" # required, ASCENDING or DESCENDING
   polarization: "VV"           # required
   burst_id_groups:
-    - iw: 2
-      prefix: 224
+    - iw: 1
+      prefix: 146
       range:
-        start: 317
-        end: 321
-    - iw: 3
-      prefix: 224
-      range:
-        start: 318
-        end: 321
+        start: 196
+        end: 200
+    # - iw: 3
+    #   prefix: 224
+    #   range:
+    #     start: 318
+    #     end: 321
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 DOWNLOAD:
-  specific_burst_file: ""
+  specific_burst_file: "" # if not input burst file, the one generated in the previous step will be used
   storage_dir: "/home/davidncu/ISCE_MintPy/HYP3_Workspace/find_burst_testscript/burst_downloaded/"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -37,11 +37,11 @@ PAIR:
   
   looks_num: "10x2" # must be 5x1, 10x2, or 20x4, instructions from hyp3-isce2 Github page
 
-  method: "sbas" #"sbas" # "sbas" or "sequential", if select sbas, please prepare file asf-sbas-pairs.csv from search.asf.alaska.edu
+  method: "sequential" #"sbas" # "sbas" or "sequential", if select sbas, please prepare file asf-sbas-pairs.csv from search.asf.alaska.edu
 
-  asf_sbas_file: "/mnt/hgfs/SharedFolder/support_files/asf-sbas-pairs (4).csv" # filepath to SBAS analysis output file
+  asf_sbas_file: "" # filepath to SBAS analysis output file
   
-  burst_search_file: "DESCENDING_105_IW_VV_2017-01-01_2019-12-31.xlsx" # user-specific burst search file
+  burst_search_file: "" # user-specific burst search file
                         # if nothing input, the program will search for file
                         # based on parameters defined in SEARCH section
                         # the rule of filename is {flight_direction}_{relative_orbit}_{beam_mode}_{polarization}_{start_date}_{end_date}.xlsx
